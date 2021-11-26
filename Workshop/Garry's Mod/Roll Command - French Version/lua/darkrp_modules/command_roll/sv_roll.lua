@@ -2,10 +2,10 @@ local function Roll(ply, args)
     local say = function()
         if GAMEMODE.Config.alltalk then
             for _,target in pairs(player.GetAll()) do
-                DarkRP.talkToPerson(target, team.GetColor(ply:Team()), ply:Nick().. ' a tourné les dés et a fait ' .. math.random(1, 100) .. '.')
+                DarkRP.talkToPerson(target, team.GetColor(ply:Team()), ('%s a tourné les dés et a fait %s.'):format(ply:Nick(), math.random(1, 100)))
             end
         else
-            DarkRP.talkToRange(ply, ply:Nick().. ' a tourné les dés et a fait ' .. math.random(1, 100) .. '.', '', 250)
+            DarkRP.talkToRange(ply, ('%s a tourné les dés et a fait %s.'):format(ply:Nick(), math.random(1, 100)), '', 250)
         end
     end
 
@@ -13,8 +13,8 @@ local function Roll(ply, args)
 end
 
 DarkRP.defineChatCommand('roll', Roll, 1.5)
-DarkRP.declareChatCommand{
+DarkRP.declareChatCommand {
     command = 'roll',
-    description = 'Vous permet d\'obtenir un nombre aléatoire entre 1 et 100.',
+    description = "Vous permet d'obtenir un nombre aléatoire entre 1 et 100.",
     delay = 1.5
 }
