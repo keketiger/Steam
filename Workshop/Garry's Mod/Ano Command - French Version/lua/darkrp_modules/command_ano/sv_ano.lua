@@ -13,14 +13,12 @@ local function playerMeta:PlayerIsStaff()
 end
 
 local function Anonyme(ply, args)
-
     if args == "" then
         DarkRP.notify(ply, 1, 4, DarkRP.getPhrase('invalid_x', 'argument', ''))
         return
     end
 
     local say = function(message)
-
         if message == "" then
             DarkRP.notify(ply, 1, 4, DarkRP.getPhrase('invalid_x', 'argument', ''))
             return
@@ -41,7 +39,7 @@ local function Anonyme(ply, args)
 end
 
 DarkRP.defineChatCommand('ano', Anonyme, 1.5)
-DarkRP.declareChatCommand{
+DarkRP.declareChatCommand {
     command = 'ano',
     description = 'Vous permet de parler à une personne en inconnue.',
     delay = 1.5
